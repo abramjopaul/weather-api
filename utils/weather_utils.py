@@ -1,11 +1,7 @@
-import os
 import requests
+import json
 
-from dotenv import load_dotenv
 from datetime import datetime, timedelta
-from pytz import timezone
-
-load_dotenv()
 
 def get_round_off_hour(timezone):
     current_time = datetime.now(timezone)
@@ -18,10 +14,10 @@ def get_hourly_weather(latitude: int, longitude: int):
     params = {
 	"latitude": latitude,
 	"longitude": longitude,
-    "current": "temperature_2m",
 	"hourly": ["temperature_2m", "apparent_temperature"],
 	"timezone": "GMT",
 	"forecast_days": 1
     }
     response = requests.get(url, params)
     return response.json()
+

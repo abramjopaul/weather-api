@@ -1,8 +1,8 @@
 import pandas as pd
 
 from pytz import timezone
-import utils.weather_utils as weather_utils
 
+import utils.weather_utils as weather_utils
 import utils.config as config
 
 def compute_weather(include_maximum: bool):
